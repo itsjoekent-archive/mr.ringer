@@ -2,9 +2,20 @@
   "name": "mr.ringer",
   "version": "0.0.1",
   "description": "Mr. Ringer is a Javascript math library with a simple API for complex math.",
-  "main": "index.js",
+  "main": "dist/mr.ringer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run build:watch\" \"npm run test:watch\"",
+    "build": "PROD=true webpack",
+    "build:watch": "webpack --watch",
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "prepublish": "npm run build"
+  },
+  "ava": {
+    "babel": true,
+    "files": [
+      "test/*"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,5 +31,17 @@
   "bugs": {
     "url": "https://github.com/itsjoekent/mr.ringer/issues"
   },
-  "homepage": "https://github.com/itsjoekent/mr.ringer#readme"
+  "homepage": "https://github.com/itsjoekent/mr.ringer#readme",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "ava": "^3.5.0",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.1.0",
+    "prettier": "2.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
