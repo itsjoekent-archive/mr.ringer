@@ -1,6 +1,6 @@
 # mr.ringer
 
-Mr. Ringer is a Javascript math library with a simple API for complex math.
+mr.ringer is a Javascript math library that makes it simple to perform complex math.
 
 🚧 This library is a work in progress 🚧
 
