@@ -24,4 +24,4 @@ See the [documentation website](https://google.com) for usage instructions _and_
 
 ## Contributing
 
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to contribute and run the project locally.
+Check out the [contributing guide](./CONTRIBUTING.md) for information on how to run the project locally and submit a pull request.

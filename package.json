@@ -17,6 +17,11 @@
       "test/*"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itsjoekent/mr.ringer.git"
@@ -40,7 +45,9 @@
     "ava": "^3.5.0",
     "babel-loader": "^8.1.0",
     "concurrently": "^5.1.0",
+    "husky": "^4.2.3",
     "prettier": "2.0.0",
+    "pretty-quick": "^2.0.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   }
