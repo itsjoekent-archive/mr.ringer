@@ -22,6 +22,11 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itsjoekent/mr.ringer.git"
