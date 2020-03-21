@@ -1,0 +1,24 @@
+{
+  "name": "mr.ringer",
+  "version": "0.0.1",
+  "description": "Mr. Ringer is a Javascript math library with a simple API for complex math.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjoekent/mr.ringer.git"
+  },
+  "keywords": [
+    "math",
+    "vectors",
+    "matrix"
+  ],
+  "author": "Joe Kent <hey [at] joekent [dot] nyc>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsjoekent/mr.ringer/issues"
+  },
+  "homepage": "https://github.com/itsjoekent/mr.ringer#readme"
+}
