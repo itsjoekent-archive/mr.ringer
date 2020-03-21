@@ -15,7 +15,7 @@ $ npm install mr.ringer
 Or reference standalone,
 
 ```
-https://unpkg.com/mr.ringer/dist/mr.ringer.js
+<script src="https://unpkg.com/mr.ringer/dist/mr.ringer.js"></script>
 ```
 
 ## Documentation
