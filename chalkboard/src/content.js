@@ -61,6 +61,4 @@ const content = {
   sections,
 };
 
-console.log(content);
-
 export default content;
