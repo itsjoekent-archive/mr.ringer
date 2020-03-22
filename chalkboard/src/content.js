@@ -9,8 +9,6 @@ const markup = `
 
   This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam for his class (I ended up getting a 46% on that test).
 
-  This page serves as not only written documentation for how to use the library, but as a virtual chalkboard for dummies like me that don’t understand what some of these equations are actually used for and what they do.
-
   # Installation
 
   You can install mr.ringer from either npm or use it as a standalone script on the page.
