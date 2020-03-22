@@ -29,7 +29,7 @@ const content = {
         {
           type: 'markdown',
           content:
-            'You can install mr.roger from either npm or use it as a standalone script on the page.',
+            'You can install mr.ringer from either npm or use it as a standalone script on the page.',
         },
         {
           type: 'terminal',
