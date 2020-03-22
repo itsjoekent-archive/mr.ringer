@@ -1,0 +1,109 @@
+webpackHotUpdate("static/development/pages/index.js",{
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+false,
+
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _src_Navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/Navigation */ "./src/Navigation.js");
+/* harmony import */ var _src_Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/Section */ "./src/Section.js");
+/* harmony import */ var _src_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/content */ "./src/content.js");
+
+var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/pages/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+function _templateObject() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  body {\n    width: 100%;\n    min-height: 100vh;\n\n    background-color: ", ";\n\n    background-image: url(", "/chalk-noise.png);\n    background-size: 1280px 720px;\n    background-repeat: repeat;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+var PageBackground = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["createGlobalStyle"])(_templateObject(), function (_ref) {
+  var theme = _ref.theme;
+  return theme.colors.dark;
+}, "");
+var layoutBreakpoint = "min-width: 1024px";
+var PageLayout = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "pages__PageLayout",
+  componentId: "sc-1cvwks4-0"
+})(["display:flex;flex-direction:column;width:100%;margin-top:24px;padding-left:24px;padding-right:24px;@media (", "){flex-direction:row;justify-content:space-between;max-width:1280px;margin-top:48px;margin-left:auto;margin-right:auto;}"], layoutBreakpoint);
+var NavColumn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "pages__NavColumn",
+  componentId: "sc-1cvwks4-1"
+})(["width:100%;margin-bottom:48px;@media (", "){width:calc(25% - 24px);margin-bottom:0;}"], layoutBreakpoint);
+var MainColumn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(NavColumn).withConfig({
+  displayName: "pages__MainColumn",
+  componentId: "sc-1cvwks4-2"
+})(["@media (", "){width:calc(75% - 48px);}"], layoutBreakpoint);
+function Home(props) {
+  console.log(_src_content__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 5
+    }
+  }, __jsx(PageBackground, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 7
+    }
+  }), __jsx(PageLayout, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 7
+    }
+  }, __jsx(NavColumn, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 9
+    }
+  }, __jsx(_src_Navigation__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 11
+    }
+  })), __jsx(MainColumn, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 9
+    }
+  })));
+}
+
+/***/ })
+
+})
+//# sourceMappingURL=index.js.f99fda45c1570c1fbaaa.hot-update.js.map

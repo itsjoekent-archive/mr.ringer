@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{oaJR:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/Section",function(){return w("8JPY")}])}},[["oaJR",0,1,2,3]]]);

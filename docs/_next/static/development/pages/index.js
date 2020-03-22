@@ -1,35 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js ***!
@@ -5573,10 +5543,262 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/Navigation.js":
-/*!*****************************!*\
-  !*** ./pages/Navigation.js ***!
-  \*****************************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _src_Navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/Navigation */ "./src/Navigation.js");
+/* harmony import */ var _src_Documentation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/Documentation */ "./src/Documentation.js");
+/* harmony import */ var _src_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/content */ "./src/content.js");
+
+var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/pages/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+function _templateObject() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  body {\n    width: 100%;\n    min-height: 100vh;\n\n    background-color: ", ";\n\n    background-image: url(", "/chalk-noise.png);\n    background-size: 1280px 720px;\n    background-repeat: repeat;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+var PageBackground = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["createGlobalStyle"])(_templateObject(), function (_ref) {
+  var theme = _ref.theme;
+  return theme.colors.dark;
+}, "");
+var layoutBreakpoint = "min-width: 1024px";
+var PageLayout = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "pages__PageLayout",
+  componentId: "sc-1cvwks4-0"
+})(["display:flex;flex-direction:column;width:100%;margin-top:24px;padding-left:24px;padding-right:24px;@media (", "){flex-direction:row;justify-content:space-between;max-width:1280px;margin-top:48px;margin-left:auto;margin-right:auto;}"], layoutBreakpoint);
+var NavColumn = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "pages__NavColumn",
+  componentId: "sc-1cvwks4-1"
+})(["width:100%;margin-bottom:48px;@media (", "){width:calc(25% - 24px);margin-bottom:0;}"], layoutBreakpoint);
+var MainColumn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(NavColumn).withConfig({
+  displayName: "pages__MainColumn",
+  componentId: "sc-1cvwks4-2"
+})(["@media (", "){width:calc(75% - 48px);}"], layoutBreakpoint);
+function Home(props) {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 5
+    }
+  }, __jsx(PageBackground, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 7
+    }
+  }), __jsx(PageLayout, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 7
+    }
+  }, __jsx(NavColumn, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 9
+    }
+  }, __jsx(_src_Navigation__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 11
+    }
+  })), __jsx(MainColumn, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 9
+    }
+  }, __jsx(_src_Documentation__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 11
+    }
+  }))));
+}
+
+/***/ }),
+
+/***/ "./src/Documentation.js":
+/*!******************************!*\
+  !*** ./src/Documentation.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Documentation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var marksy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! marksy */ "./node_modules/marksy/lib/index.js");
+/* harmony import */ var marksy__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(marksy__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _makeId__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./makeId */ "./src/makeId.js");
+/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./content */ "./src/content.js");
+var _this = undefined,
+    _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/src/Documentation.js";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+_makeId__WEBPACK_IMPORTED_MODULE_3__["default"];
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Documentation__Container",
+  componentId: "cnhtf5-0"
+})(["display:flex;flex-direction:column;margin-bottom:64px;"]);
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2.withConfig({
+  displayName: "Documentation__Title",
+  componentId: "cnhtf5-1"
+})(["display:block;", " font-size:", ";font-weight:700;letter-spacing:", ";line-height:", ";color:", ";margin-bottom:36px;"], function (_ref) {
+  var theme = _ref.theme;
+  return theme.font;
+}, function (_ref2) {
+  var theme = _ref2.theme;
+  return theme.fontSizes.title;
+}, function (_ref3) {
+  var theme = _ref3.theme;
+  return theme.letterSpacing;
+}, function (_ref4) {
+  var theme = _ref4.theme;
+  return theme.lineHeight;
+}, function (_ref5) {
+  var theme = _ref5.theme;
+  return theme.colors.light;
+});
+var Paragraph = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
+  displayName: "Documentation__Paragraph",
+  componentId: "cnhtf5-2"
+})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";text-decoration:none;margin-bottom:12px;"], function (_ref6) {
+  var theme = _ref6.theme;
+  return theme.font;
+}, function (_ref7) {
+  var theme = _ref7.theme;
+  return theme.fontSizes.body;
+}, function (_ref8) {
+  var theme = _ref8.theme;
+  return theme.letterSpacing;
+}, function (_ref9) {
+  var theme = _ref9.theme;
+  return theme.lineHeight;
+}, function (_ref10) {
+  var theme = _ref10.theme;
+  return theme.colors.light;
+});
+var Anchor = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+  displayName: "Documentation__Anchor",
+  componentId: "cnhtf5-3"
+})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";cursor:pointer;text-decoration:none;&:hover{color:", ";}"], function (_ref11) {
+  var theme = _ref11.theme;
+  return theme.font;
+}, function (_ref12) {
+  var theme = _ref12.theme;
+  return theme.fontSizes.body;
+}, function (_ref13) {
+  var theme = _ref13.theme;
+  return theme.letterSpacing;
+}, function (_ref14) {
+  var theme = _ref14.theme;
+  return theme.lineHeight;
+}, function (_ref15) {
+  var theme = _ref15.theme;
+  return theme.colors.lightComplimentary;
+}, function (_ref16) {
+  var theme = _ref16.theme;
+  return theme.colors.complimentary;
+});
+
+var compileMarkdown = function compileMarkdown() {
+  var lastH1 = null;
+  return marksy__WEBPACK_IMPORTED_MODULE_2___default()({
+    createElement: react__WEBPACK_IMPORTED_MODULE_0__["createElement"],
+    elements: {
+      h1: function h1(_ref17) {
+        var children = _ref17.children;
+        var id = Object(_makeId__WEBPACK_IMPORTED_MODULE_3__["default"])(children.toString());
+        lastH1 = id;
+        return __jsx(Title, {
+          id: id,
+          __self: _this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63,
+            columnNumber: 11
+          }
+        }, children);
+      },
+      h2: function h2(_ref18) {
+        var children = _ref18.children;
+        var id = Object(_makeId__WEBPACK_IMPORTED_MODULE_3__["default"])(children.toString());
+        return __jsx(Title, {
+          id: "".concat(lastH1, "---").concat(id),
+          __self: _this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 11
+          }
+        }, children);
+      },
+      p: Paragraph,
+      a: Anchor
+    }
+  });
+};
+
+function Documentation() {
+  return __jsx(Container, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 5
+    }
+  }, compileMarkdown()(_content__WEBPACK_IMPORTED_MODULE_4__["default"].markup).tree);
+}
+
+/***/ }),
+
+/***/ "./src/Navigation.js":
+/*!***************************!*\
+  !*** ./src/Navigation.js ***!
+  \***************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5586,25 +5808,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content */ "./pages/content.js");
-/* harmony import */ var _sharedStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sharedStyles */ "./pages/sharedStyles.js");
-var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/pages/Navigation.js";
+/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content */ "./src/content.js");
+/* harmony import */ var _makeId__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./makeId */ "./src/makeId.js");
+/* harmony import */ var _sharedStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sharedStyles */ "./src/sharedStyles.js");
+var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/src/Navigation.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 var NavigationContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].nav.withConfig({
   displayName: "Navigation__NavigationContainer",
-  componentId: "a2im98-0"
-})(["display:flex;flex-direction:column;"]);
+  componentId: "dqsris-0"
+})(["display:flex;flex-direction:column;@media (min-width:1024px){position:sticky;top:48px;}"]);
 var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Navigation__TitleContainer",
-  componentId: "a2im98-1"
+  componentId: "dqsris-1"
 })(["display:flex;flex-direction:column;margin-bottom:24px;"]);
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
   displayName: "Navigation__Title",
-  componentId: "a2im98-2"
+  componentId: "dqsris-2"
 })(["", " font-size:", ";font-weight:700;letter-spacing:", ";line-height:", ";text-transform:uppercase;color:", ";margin-bottom:6px;"], function (_ref) {
   var theme = _ref.theme;
   return theme.chalkFont;
@@ -5623,7 +5848,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withCon
 });
 var Subtitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
   displayName: "Navigation__Subtitle",
-  componentId: "a2im98-3"
+  componentId: "dqsris-3"
 })(["", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";"], function (_ref6) {
   var theme = _ref6.theme;
   return theme.font;
@@ -5642,15 +5867,15 @@ var Subtitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withC
 });
 var SubtitleLink = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Subtitle).withConfig({
   displayName: "Navigation__SubtitleLink",
-  componentId: "a2im98-4"
+  componentId: "dqsris-4"
 })(["text-decoration:none;display:inline-block;cursor:pointer;&:hover{color:", ";}"], function (_ref11) {
   var theme = _ref11.theme;
   return theme.colors.complimentary;
 });
 var Link = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
   displayName: "Navigation__Link",
-  componentId: "a2im98-5"
-})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";text-decoration:none;cursor:pointer;margin-bottom:12px;&:hover{", "}"], function (_ref12) {
+  componentId: "dqsris-5"
+})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";text-decoration:none;cursor:pointer;margin-bottom:12px;", " &:hover{color:", ";}"], function (_ref12) {
   var theme = _ref12.theme;
   return theme.font;
 }, function (_ref13) {
@@ -5665,40 +5890,97 @@ var Link = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfi
 }, function (_ref16) {
   var theme = _ref16.theme;
   return theme.colors.light;
-}, _sharedStyles__WEBPACK_IMPORTED_MODULE_3__["chalkUnderlineStyle"]);
+}, function (_ref17) {
+  var isActive = _ref17.isActive,
+      theme = _ref17.theme;
+  return isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(["color:", ";"], function (_ref18) {
+    var theme = _ref18.theme;
+    return theme.colors.complimentary;
+  });
+}, function (_ref19) {
+  var theme = _ref19.theme,
+      isActive = _ref19.isActive;
+  return isActive ? theme.colors.complimentary : theme.colors.lightComplimentary;
+});
 var LinksContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul.withConfig({
   displayName: "Navigation__LinksContainer",
-  componentId: "a2im98-6"
-})(["display:flex;flex-direction:column;list-style-type:none;padding-left:0;li:last-of-type ", "{margin-bottom:0;}@media (min-width:1280px){position:sticky;top:128px;}"], Link);
+  componentId: "dqsris-6"
+})(["display:flex;flex-direction:column;list-style-type:none;padding-left:0;"]);
+var Sublink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+  displayName: "Navigation__Sublink",
+  componentId: "dqsris-7"
+})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";text-decoration:none;cursor:pointer;margin-bottom:6px;&:hover{color:", ";}"], function (_ref20) {
+  var theme = _ref20.theme;
+  return theme.font;
+}, function (_ref21) {
+  var theme = _ref21.theme;
+  return theme.fontSizes.small;
+}, function (_ref22) {
+  var theme = _ref22.theme;
+  return theme.letterSpacing;
+}, function (_ref23) {
+  var theme = _ref23.theme;
+  return theme.lineHeight;
+}, function (_ref24) {
+  var theme = _ref24.theme;
+  return theme.colors.light;
+}, function (_ref25) {
+  var theme = _ref25.theme;
+  return theme.colors.lightComplimentary;
+});
+var SublinksContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul.withConfig({
+  displayName: "Navigation__SublinksContainer",
+  componentId: "dqsris-8"
+})(["display:flex;flex-direction:column;list-style-type:none;padding-left:8px;height:", ";margin-bottom:", ";overflow-y:hidden;li:last-of-type ", "{margin-bottom:0;}"], function (_ref26) {
+  var isActive = _ref26.isActive;
+  return isActive ? 'auto' : '0px';
+}, function (_ref27) {
+  var isActive = _ref27.isActive;
+  return isActive ? '12px' : '0px';
+}, Sublink);
 function Navigation() {
   var _this = this;
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_content__WEBPACK_IMPORTED_MODULE_2__["default"].sections[0].id),
+      activeSection = _useState[0],
+      setActiveSection = _useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var hash = window.location.hash;
+
+    if (hash) {
+      setActiveSection(Object(_makeId__WEBPACK_IMPORTED_MODULE_3__["default"])(hash.replace('#', '').trim().split('---')[0]));
+      setTimeout(function () {
+        document.querySelector(hash).scrollIntoView();
+      }, 50);
+    }
+  }, []);
   return __jsx(NavigationContainer, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 128,
       columnNumber: 5
     }
   }, __jsx(TitleContainer, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 129,
       columnNumber: 7
     }
   }, __jsx(Title, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 130,
       columnNumber: 9
     }
   }, "mr. ringer"), __jsx(Subtitle, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 131,
       columnNumber: 9
     }
   }, "A Javascript Math library created by", ' ', __jsx(SubtitleLink, {
@@ -5707,14 +5989,14 @@ function Navigation() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 133,
       columnNumber: 11
     }
   }, "@itsjoekent"))), __jsx(LinksContainer, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 138,
       columnNumber: 7
     }
   }, _content__WEBPACK_IMPORTED_MODULE_2__["default"].sections.map(function (section) {
@@ -5723,380 +6005,122 @@ function Navigation() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 140,
         columnNumber: 11
       }
     }, __jsx(Link, {
       href: "#".concat(section.id),
+      onClick: function onClick() {
+        return setActiveSection(section.id);
+      },
+      isActive: section.id === activeSection,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94,
+        lineNumber: 141,
         columnNumber: 13
       }
-    }, section.title));
+    }, section.title), !!section.subSections && !!section.subSections.length && __jsx(SublinksContainer, {
+      isActive: section.id === activeSection,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 147,
+        columnNumber: 15
+      }
+    }, section.subSections.map(function (subSection) {
+      return __jsx(Sublink, {
+        key: subSection.id,
+        href: "#".concat(section.id, "---").concat(subSection.id),
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149,
+          columnNumber: 19
+        }
+      }, subSection.title);
+    })));
   })));
 }
 
 /***/ }),
 
-/***/ "./pages/Section.js":
-/*!**************************!*\
-  !*** ./pages/Section.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Section; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var marksy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! marksy */ "./node_modules/marksy/lib/index.js");
-/* harmony import */ var marksy__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(marksy__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _sharedStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sharedStyles */ "./pages/sharedStyles.js");
-var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/pages/Section.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-var SectionContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "Section__SectionContainer",
-  componentId: "sc-1dy62o7-0"
-})(["display:flex;flex-direction:column;margin-bottom:64px;"]);
-var SectionParagraph = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
-  displayName: "Section__SectionParagraph",
-  componentId: "sc-1dy62o7-1"
-})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";text-decoration:none;margin-bottom:12px;"], function (_ref) {
-  var theme = _ref.theme;
-  return theme.font;
-}, function (_ref2) {
-  var theme = _ref2.theme;
-  return theme.fontSizes.body;
-}, function (_ref3) {
-  var theme = _ref3.theme;
-  return theme.letterSpacing;
-}, function (_ref4) {
-  var theme = _ref4.theme;
-  return theme.lineHeight;
-}, function (_ref5) {
-  var theme = _ref5.theme;
-  return theme.colors.light;
-});
-var SectionAnchor = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
-  displayName: "Section__SectionAnchor",
-  componentId: "sc-1dy62o7-2"
-})(["display:inline-block;", " font-size:", ";font-weight:400;letter-spacing:", ";line-height:", ";color:", ";cursor:pointer;text-decoration:none;&:hover{", "}"], function (_ref6) {
-  var theme = _ref6.theme;
-  return theme.font;
-}, function (_ref7) {
-  var theme = _ref7.theme;
-  return theme.fontSizes.body;
-}, function (_ref8) {
-  var theme = _ref8.theme;
-  return theme.letterSpacing;
-}, function (_ref9) {
-  var theme = _ref9.theme;
-  return theme.lineHeight;
-}, function (_ref10) {
-  var theme = _ref10.theme;
-  return theme.colors.lightComplimentary;
-}, _sharedStyles__WEBPACK_IMPORTED_MODULE_3__["chalkUnderlineStyle"]);
-var compileMarkdown = marksy__WEBPACK_IMPORTED_MODULE_2___default()({
-  createElement: react__WEBPACK_IMPORTED_MODULE_0__["createElement"],
-  elements: {
-    p: SectionParagraph,
-    a: SectionAnchor
-  }
-});
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2.withConfig({
-  displayName: "Section__Title",
-  componentId: "sc-1dy62o7-3"
-})(["display:block;", " font-size:", ";font-weight:700;letter-spacing:", ";line-height:", ";color:", ";margin-bottom:36px;"], function (_ref11) {
-  var theme = _ref11.theme;
-  return theme.font;
-}, function (_ref12) {
-  var theme = _ref12.theme;
-  return theme.fontSizes.title;
-}, function (_ref13) {
-  var theme = _ref13.theme;
-  return theme.letterSpacing;
-}, function (_ref14) {
-  var theme = _ref14.theme;
-  return theme.lineHeight;
-}, function (_ref15) {
-  var theme = _ref15.theme;
-  return theme.colors.light;
-});
-var TerminalContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "Section__TerminalContainer",
-  componentId: "sc-1dy62o7-4"
-})(["display:block;margin-top:24px;margin-bottom:24px;padding:16px;background-color:", ";border:2px solid ", ";"], function (_ref16) {
-  var theme = _ref16.theme;
-  return theme.colors.dark;
-}, function (_ref17) {
-  var theme = _ref17.theme;
-  return theme.colors.complimentary;
-});
-var TerminalLine = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
-  displayName: "Section__TerminalLine",
-  componentId: "sc-1dy62o7-5"
-})(["font-family:monospace;font-size:", ";font-weight:400;color:", ";line-height:1.1;margin-bottom:4px;"], function (_ref18) {
-  var theme = _ref18.theme;
-  return theme.fontSizes.body;
-}, function (_ref19) {
-  var theme = _ref19.theme;
-  return theme.colors.lightComplimentary;
-});
-var TerminalLineBreak = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span.withConfig({
-  displayName: "Section__TerminalLineBreak",
-  componentId: "sc-1dy62o7-6"
-})(["display:block;width:100%;height:calc((", " * 1.1) + 4px);"], function (_ref20) {
-  var theme = _ref20.theme;
-  return theme.fontSizes.body;
-});
-function Section(props) {
-  var _this = this;
-
-  var id = props.id,
-      title = props.title,
-      composition = props.composition;
-  return __jsx(SectionContainer, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 5
-    }
-  }, __jsx(Title, {
-    id: id,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 7
-    }
-  }, title), composition && composition.map(function (_ref21) {
-    var type = _ref21.type,
-        content = _ref21.content;
-    var key = JSON.stringify(content);
-
-    if (type === 'markdown') {
-      return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-        key: key,
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95,
-          columnNumber: 15
-        }
-      }, compileMarkdown(content).tree);
-    }
-
-    if (type === 'terminal') {
-      return __jsx(TerminalContainer, {
-        key: key,
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103,
-          columnNumber: 15
-        }
-      }, content.map(function (line) {
-        return line.length ? __jsx(TerminalLine, {
-          __self: _this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 105,
-            columnNumber: 19
-          }
-        }, line) : __jsx(TerminalLineBreak, {
-          __self: _this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 109,
-            columnNumber: 19
-          }
-        });
-      }));
-    }
-
-    return null;
-  }));
-}
-
-/***/ }),
-
-/***/ "./pages/content.js":
-/*!**************************!*\
-  !*** ./pages/content.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var content = {
-  sections: [{
-    id: 'overview',
-    title: 'Overview',
-    composition: [{
-      type: 'markdown',
-      content: "Mr. Ringer is a Javascript math library with a simple API for complex math."
-    }, {
-      type: 'markdown',
-      content: "This library was created to aide the development of a 3D video game, after realizing I didn\u2019t understand the math required to make a 3D game from scratch and I needed to learn it. As such this library has a bias towards supporting what is necessary for that project. But this code is [open source](https://github.com/itsjoekent/mr.ringer) and anyone can contribute towards it."
-    }, {
-      type: 'markdown',
-      content: "This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam for his class (I ended up getting a 46% on that test)."
-    }, {
-      type: 'markdown',
-      content: "This page serves as not only written documentation for how to use the library, but as a virtual chalkboard for dummies like me that don\u2019t understand what some of these equations are actually used for and what they do."
-    }]
-  }, {
-    id: 'installation',
-    title: 'Installation',
-    composition: [{
-      type: 'markdown',
-      content: 'You can install mr.roger from either npm or use it as a standalone script on the page.'
-    }, {
-      type: 'terminal',
-      content: ['$ npm install mr.ringer', '', '<script src="https://unpkg.com/mr.ringer/dist/mr.ringer.js"></script>']
-    }]
-  }, {
-    id: 'vector2',
-    title: 'Vector2'
-  }, {
-    id: 'vector3',
-    title: 'Vector3'
-  }]
-};
-/* harmony default export */ __webpack_exports__["default"] = (content);
-
-/***/ }),
-
-/***/ "./pages/index.js":
+/***/ "./src/content.js":
 /*!************************!*\
-  !*** ./pages/index.js ***!
+  !*** ./src/content.js ***!
   \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Navigation */ "./pages/Navigation.js");
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Section */ "./pages/Section.js");
-/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./content */ "./pages/content.js");
+/* harmony import */ var _makeId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeId */ "./src/makeId.js");
 
-
-var _jsxFileName = "/Users/joekentew 1/dev/joe/mr.ringer/chalkboard/pages/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  body {\n    width: 100%;\n    min-height: 100vh;\n\n    background-color: ", ";\n\n    background-image: url(", "/chalk-noise.png);\n    background-size: 1280px 720px;\n    background-repeat: repeat;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
+var markup = "\n  # Overview\n\n  Mr. Ringer is a Javascript math library with a simple API for complex math.\n\n  This library was created to aide the development of a 3D video game, after realizing I didn\u2019t understand the math required to make a 3D game from scratch and I needed to learn it. As such this library has a bias towards supporting what is necessary for that project. But this code is [open source](https://github.com/itsjoekent/mr.ringer) and anyone can contribute towards it.\n\n  This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam for his class (I ended up getting a 46% on that test).\n\n  This page serves as not only written documentation for how to use the library, but as a virtual chalkboard for dummies like me that don\u2019t understand what some of these equations are actually used for and what they do.\n\n  # Installation\n\n  You can install mr.ringer from either npm or use it as a standalone script on the page.\n\n  ```\n  $ npm install mr.ringer\n\n  <script src=\"https://unpkg.com/mr.ringer/dist/mr.ringer.js\"></script>\n  ```\n\n  # Vector2\n\n  ## add()\n\n  # Vector3\n";
+var lines = markup.split('\n').map(function (line, index) {
+  return {
+    line: line.trim(),
+    index: index
   };
+});
+var sections = lines.filter(function (_ref) {
+  var line = _ref.line;
+  return line.startsWith('# ');
+}).map(function (_ref2) {
+  var line = _ref2.line,
+      index = _ref2.index;
+  return {
+    index: index,
+    id: Object(_makeId__WEBPACK_IMPORTED_MODULE_0__["default"])(line.replace('#', '')),
+    title: line.replace('#', '').trim()
+  };
+});
+sections.forEach(function (section, index) {
+  var start = section.index;
+  var end = (sections[index + 1] || {}).index || lines.length;
+  var subSections = lines.slice(start, end).filter(function (_ref3) {
+    var line = _ref3.line;
+    return line.startsWith('## ');
+  }).map(function (_ref4) {
+    var line = _ref4.line,
+        index = _ref4.index;
+    return {
+      index: index,
+      id: Object(_makeId__WEBPACK_IMPORTED_MODULE_0__["default"])(line.replace('##', '')),
+      title: line.replace('##', '').trim()
+    };
+  });
+  sections[index].subSections = subSections;
+});
+var content = {
+  markup: markup,
+  sections: sections
+};
+console.log(content);
+/* harmony default export */ __webpack_exports__["default"] = (content);
 
-  return data;
-}
+/***/ }),
 
+/***/ "./src/makeId.js":
+/*!***********************!*\
+  !*** ./src/makeId.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
-
-
-var PageBackground = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["createGlobalStyle"])(_templateObject(), function (_ref) {
-  var theme = _ref.theme;
-  return theme.colors.dark;
-}, "");
-var layoutBreakpoint = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(["min-width:1024px"]);
-var PageLayout = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
-  displayName: "pages__PageLayout",
-  componentId: "sc-1cvwks4-0"
-})(["display:flex;flex-direction:column;width:100%;margin-top:24px;padding-left:24px;padding-right:24px;@media (", "){flex-direction:row;justify-content:space-between;max-width:1280px;margin-top:48px;margin-left:auto;margin-right:auto;}"], layoutBreakpoint);
-var NavColumn = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
-  displayName: "pages__NavColumn",
-  componentId: "sc-1cvwks4-1"
-})(["width:100%;margin-bottom:48px;@media (", "){width:calc(25% - 24px);margin-bottom:0;}"], layoutBreakpoint);
-var MainColumn = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(NavColumn).withConfig({
-  displayName: "pages__MainColumn",
-  componentId: "sc-1cvwks4-2"
-})(["@media (", "){width:calc(75% - 48px);}"], layoutBreakpoint);
-function Home(props) {
-  var _this = this;
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 5
-    }
-  }, __jsx(PageBackground, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 7
-    }
-  }), __jsx(PageLayout, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 7
-    }
-  }, __jsx(NavColumn, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62,
-      columnNumber: 9
-    }
-  }, __jsx(_Navigation__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63,
-      columnNumber: 11
-    }
-  })), __jsx(MainColumn, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 9
-    }
-  }, _content__WEBPACK_IMPORTED_MODULE_6__["default"].sections.map(function (section) {
-    return __jsx(_Section__WEBPACK_IMPORTED_MODULE_5__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, section, {
-      key: section.id,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67,
-        columnNumber: 13
-      }
-    }));
-  }))));
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return makeId; });
+function makeId(source) {
+  return encodeURIComponent(source.replace(/\W/g, '').toLowerCase().trim());
 }
 
 /***/ }),
 
-/***/ "./pages/sharedStyles.js":
-/*!*******************************!*\
-  !*** ./pages/sharedStyles.js ***!
-  \*******************************/
+/***/ "./src/sharedStyles.js":
+/*!*****************************!*\
+  !*** ./src/sharedStyles.js ***!
+  \*****************************/
 /*! exports provided: chalkUnderlineStyle, screenReaderOnly */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6116,7 +6140,7 @@ var screenReaderOnly = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["cs
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjoekentew%201%2Fdev%2Fjoe%2Fmr.ringer%2Fchalkboard%2Fpages%2Findex.js ***!
   \*************************************************************************************************************************************************/
@@ -6139,5 +6163,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
