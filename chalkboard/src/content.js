@@ -3,9 +3,7 @@ import makeId from './makeId';
 const markup = `
   # Overview
 
-  Mr. Ringer is a Javascript math library with a simple API for complex math.
-
-  This library was created to aide the development of a 3D video game, after realizing I didn’t understand the math required to make a 3D game from scratch and I needed to learn it. As such this library has a bias towards supporting what is necessary for that project. But this code is [open source](https://github.com/itsjoekent/mr.ringer) and anyone can contribute towards it.
+  Mr. Ringer is a Javascript math library that makes it simple to perform complex math for 3D games.
 
   This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam for his class (I ended up getting a 46% on that test).
 

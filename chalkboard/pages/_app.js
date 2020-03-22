@@ -56,7 +56,7 @@ export default class MyApp extends App {
           <meta property="og:title" content="Mr. Ringer" />
           <meta
             property="og:description"
-            content="Mr. Ringer is a Javascript math library that makes it simple to perform complex math."
+            content="Mr. Ringer is a Javascript math library that makes it simple to perform complex math for 3D games"
           />
           <link rel="icon" href={`${process.env.ASSET_PREFIX}/favicon.ico`} />
           <link
