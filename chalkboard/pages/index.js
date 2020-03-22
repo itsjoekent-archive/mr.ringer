@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
-import Navigation from './Navigation';
-import Section from './Section';
-import content from './content';
+import Navigation from '../src/Navigation';
+import Section from '../src/Section';
+import content from '../src/content';
 
 const PageBackground = createGlobalStyle`
   body {
