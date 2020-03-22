@@ -2,8 +2,6 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import { css, ThemeProvider } from 'styled-components';
-import ApplicationContext from './ApplicationContext';
-import 'react-toggle/style.css';
 
 const chalkFont = css`
   font-family: 'Caveat', cursive;
@@ -18,37 +16,24 @@ const chalkLineHeight = '1.2';
 const terminalLetterSpacing = 'normal';
 const terminalLineHeight = '1.1';
 
-const lightChalk = '#e9ffe9';
-const primaryChalk = '#007b3d';
+const light = '#f3f3f3';
+const dark = '#1b1b1b';
 
-const lightMono = '#f3f3f3';
-const darkMono = '#1b1b1b';
+const complimentary = '#f10079';
+const lightComplimentary = '#ffb6db';
 
-const chalkComplimentary = '#ff54aa';
-const terminalComplimentary = '#f10079';
-
-const theme = (isChalkboardTheme) => ({
-  isChalkboardTheme,
+const theme = {
   colors: {
-    primary: isChalkboardTheme ? primaryChalk : darkMono,
-    light: isChalkboardTheme ? lightChalk : lightMono,
-    lightChalk,
-    primaryChalk,
-    lightMono,
-    darkMono,
-    complimentary: isChalkboardTheme
-      ? chalkComplimentary
-      : terminalComplimentary,
+    dark,
+    light,
+    complimentary,
+    lightComplimentary,
   },
-  font: isChalkboardTheme ? chalkFont : terminalFont,
-  lineHeight: isChalkboardTheme ? chalkLineHeight : terminalLineHeight,
-  letterSpacing: isChalkboardTheme
-    ? terminalComplimentary
-    : terminalLetterSpacing,
+  font: terminalFont,
+  lineHeight: terminalLineHeight,
+  letterSpacing: terminalLetterSpacing,
   chalkLetterSpacing,
   chalkLineHeight,
-  terminalLetterSpacing,
-  terminalLineHeight,
   chalkFont,
   terminalFont,
   fontSizes: {
@@ -58,26 +43,11 @@ const theme = (isChalkboardTheme) => ({
     header: '24px',
     title: '48px',
   },
-});
+};
 
 export default class MyApp extends App {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isChalkboardTheme: true,
-    };
-  }
-
   render() {
-    const { isChalkboardTheme } = this.state;
     const { Component, pageProps } = this.props;
-
-    const contextValue = {
-      isChalkboardTheme,
-      setChalkboardTheme: (isEnabled) =>
-        this.setState({ isChalkboardTheme: isEnabled }),
-    };
 
     return (
       <React.Fragment>
@@ -119,10 +89,8 @@ export default class MyApp extends App {
             margin: 0;
           }
         `}</style>
-        <ThemeProvider theme={theme(isChalkboardTheme)}>
-          <ApplicationContext.Provider value={contextValue}>
-            <Component {...pageProps} />
-          </ApplicationContext.Provider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
         </ThemeProvider>
       </React.Fragment>
     );

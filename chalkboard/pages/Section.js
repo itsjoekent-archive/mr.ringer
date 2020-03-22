@@ -28,13 +28,12 @@ const SectionAnchor = styled.a`
   font-weight: 400;
   letter-spacing: ${({ theme }) => theme.letterSpacing};
   line-height: ${({ theme }) => theme.lineHeight};
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.lightComplimentary};
   cursor: pointer;
   text-decoration: none;
-  ${chalkUnderlineStyle}
 
   &:hover {
-    color: ${({ theme }) => theme.colors.complimentary};
+    ${chalkUnderlineStyle}
   }
 `;
 
@@ -57,6 +56,30 @@ const Title = styled.h2`
   margin-bottom: 36px;
 `;
 
+const TerminalContainer = styled.div`
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: ${({ theme }) => theme.colors.dark};
+  border: 2px solid ${({ theme }) => theme.colors.complimentary};
+`;
+
+const TerminalLine = styled.p`
+  font-family: monospace;
+  font-size: ${({ theme }) => theme.fontSizes.body};
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.lightComplimentary};
+  line-height: 1.1;
+  margin-bottom: 4px;
+`;
+
+const TerminalLineBreak = styled.span`
+  display: block;
+  width: 100%;
+  height: calc((${({ theme }) => theme.fontSizes.body} * 1.1) + 4px);
+`;
+
 export default function Section(props) {
   const { id, title, composition } = props;
 
@@ -72,6 +95,20 @@ export default function Section(props) {
               <React.Fragment key={key}>
                 {compileMarkdown(content).tree}
               </React.Fragment>
+            );
+          }
+
+          if (type === 'terminal') {
+            return (
+              <TerminalContainer key={key}>
+                {content.map((line) =>
+                  line.length ? (
+                    <TerminalLine>{line}</TerminalLine>
+                  ) : (
+                    <TerminalLineBreak />
+                  )
+                )}
+              </TerminalContainer>
             );
           }
 

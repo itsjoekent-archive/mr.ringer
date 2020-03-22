@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Toggle from 'react-toggle';
-import useApplicationContext from './useApplicationContext';
+import content from './content';
 import { chalkUnderlineStyle } from './sharedStyles';
 
 const NavigationContainer = styled.nav`
@@ -21,7 +20,7 @@ const Title = styled.h1`
   letter-spacing: ${({ theme }) => theme.chalkLetterSpacing};
   line-height: ${({ theme }) => theme.chalkLineHeight};
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.complimentary};
   margin-bottom: 6px;
 `;
 
@@ -40,58 +39,8 @@ const SubtitleLink = styled(Subtitle)`
   cursor: pointer;
 
   &:hover {
-    ${chalkUnderlineStyle}
+    color: ${({ theme }) => theme.colors.complimentary};
   }
-`;
-
-const ToggleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 24px;
-
-  .nav-theme-toggle.react-toggle {
-    .react-toggle-thumb {
-      border-color: ${({ theme }) => theme.colors.complimentary};
-      top: 0;
-      left: 0;
-      width: 12px;
-      height: 12px;
-    }
-
-    .react-toggle-track {
-      width: 25px;
-      height: 12px;
-      background-color: ${({ theme }) => theme.colors.darkMono};
-    }
-  }
-
-  .nav-theme-toggle.react-toggle--focus {
-    .react-toggle-thumb {
-      box-shadow: 0 0 2px 3px ${({ theme }) => theme.colors.complimentary};
-    }
-  }
-
-  .nav-theme-toggle.react-toggle--checked {
-    .react-toggle-track {
-      background-color: ${({ theme }) => theme.colors.lightMono};
-    }
-
-    .react-toggle-thumb {
-      left: auto;
-      right: 0;
-    }
-  }
-`;
-
-const ToggleLabel = styled.label`
-  ${({ theme }) => theme.terminalFont}
-  font-size: ${({ theme }) => theme.fontSizes.tiny};
-  font-weight: 400;
-  letter-spacing: ${({ theme }) => theme.terminalLetterSpacing};
-  line-height: ${({ theme }) => theme.terminalLineHeight};
-  color: ${({ theme }) => theme.colors.light};
-  margin-left: 12px;
 `;
 
 const Link = styled.a`
@@ -128,19 +77,6 @@ const LinksContainer = styled.ul`
 `;
 
 export default function Navigation() {
-  const { isChalkboardTheme, setChalkboardTheme } = useApplicationContext();
-
-  const toggleLabelCopy = isChalkboardTheme
-    ? 'Use more legible theme'
-    : 'Use fun chalkboard theme';
-
-  function onToggle(event) {
-    const {
-      target: { checked },
-    } = event;
-    setChalkboardTheme(!checked);
-  }
-
   return (
     <NavigationContainer>
       <TitleContainer>
@@ -152,26 +88,12 @@ export default function Navigation() {
           </SubtitleLink>
         </Subtitle>
       </TitleContainer>
-      <ToggleContainer>
-        <Toggle
-          id="theme-toggle"
-          defaultChecked={!isChalkboardTheme}
-          onChange={onToggle}
-          icons={false}
-          className="nav-theme-toggle"
-        />
-        <ToggleLabel htmlFor="theme-toggle">{toggleLabelCopy}</ToggleLabel>
-      </ToggleContainer>
       <LinksContainer>
-        <li>
-          <Link>Overview</Link>
-        </li>
-        <li>
-          <Link>Vector2</Link>
-        </li>
-        <li>
-          <Link>Vector3</Link>
-        </li>
+        {content.sections.map((section) => (
+          <li key={section.id}>
+            <Link href={`#${section.id}`}>{section.title}</Link>
+          </li>
+        ))}
       </LinksContainer>
     </NavigationContainer>
   );

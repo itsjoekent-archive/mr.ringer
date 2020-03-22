@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 import Navigation from './Navigation';
 import Section from './Section';
-import useApplicationContext from './useApplicationContext';
 import content from './content';
 
 const PageBackground = createGlobalStyle`
@@ -9,17 +8,11 @@ const PageBackground = createGlobalStyle`
     width: 100%;
     min-height: 100vh;
 
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.dark};
 
     background-image: url(${process.env.ASSET_PREFIX}/chalk-noise.png);
     background-size: 1280px 720px;
     background-repeat: repeat;
-
-    ${({ isChalkboardTheme }) =>
-      isChalkboardTheme &&
-      css`
-        cursor: url(${process.env.ASSET_PREFIX}/chalk-stick.svg), auto;
-      `}
   }
 `;
 
@@ -62,11 +55,9 @@ const MainColumn = styled(NavColumn)`
 `;
 
 export default function Home(props) {
-  const { isChalkboardTheme, setChalkboardTheme } = useApplicationContext();
-
   return (
     <React.Fragment>
-      <PageBackground isChalkboardTheme={isChalkboardTheme} />
+      <PageBackground />
       <PageLayout>
         <NavColumn>
           <Navigation />
