@@ -3,66 +3,12 @@ import marksy from 'marksy';
 import { createElement } from 'react';
 import { chalkUnderlineStyle } from './sharedStyles';
 
-const SectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 64px;
-`;
-
-const SectionParagraph = styled.p`
-  display: inline-block;
-  ${({ theme }) => theme.font}
-  font-size: ${({ theme }) => theme.fontSizes.body};
-  font-weight: 400;
-  letter-spacing: ${({ theme }) => theme.letterSpacing};
-  line-height: ${({ theme }) => theme.lineHeight};
-  color: ${({ theme }) => theme.colors.light};
-  text-decoration: none;
-  margin-bottom: 12px;
-`;
-
-const SectionAnchor = styled.a`
-  display: inline-block;
-  ${({ theme }) => theme.font}
-  font-size: ${({ theme }) => theme.fontSizes.body};
-  font-weight: 400;
-  letter-spacing: ${({ theme }) => theme.letterSpacing};
-  line-height: ${({ theme }) => theme.lineHeight};
-  color: ${({ theme }) => theme.colors.lightComplimentary};
-  cursor: pointer;
-  text-decoration: none;
-
-  &:hover {
-    ${chalkUnderlineStyle}
-  }
-`;
-
-const compileMarkdown = marksy({
-  createElement,
-  elements: {
-    p: SectionParagraph,
-    a: SectionAnchor,
-  },
-});
-
-const Title = styled.h2`
-  display: block;
-  ${({ theme }) => theme.font}
-  font-size: ${({ theme }) => theme.fontSizes.title};
-  font-weight: 700;
-  letter-spacing: ${({ theme }) => theme.letterSpacing};
-  line-height: ${({ theme }) => theme.lineHeight};
-  color: ${({ theme }) => theme.colors.light};
-  margin-bottom: 36px;
-`;
-
 const TerminalContainer = styled.div`
   display: block;
   margin-top: 24px;
   margin-bottom: 24px;
-  padding: 16px;
-  background-color: ${({ theme }) => theme.colors.dark};
-  border: 2px solid ${({ theme }) => theme.colors.complimentary};
+  padding-left: 16px;
+  word-break: break-word;
 `;
 
 const TerminalLine = styled.p`
@@ -101,11 +47,11 @@ export default function Section(props) {
           if (type === 'terminal') {
             return (
               <TerminalContainer key={key}>
-                {content.map((line) =>
+                {content.map((line, index) =>
                   line.length ? (
-                    <TerminalLine>{line}</TerminalLine>
+                    <TerminalLine key={index}>{line}</TerminalLine>
                   ) : (
-                    <TerminalLineBreak />
+                    <TerminalLineBreak key={index} />
                   )
                 )}
               </TerminalContainer>

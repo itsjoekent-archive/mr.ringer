@@ -1,10 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { useEffect, useState } from 'react';
 import content from './content';
+import makeId from './makeId';
 import { chalkUnderlineStyle } from './sharedStyles';
 
 const NavigationContainer = styled.nav`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 48px;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -55,8 +62,15 @@ const Link = styled.a`
   cursor: pointer;
   margin-bottom: 12px;
 
+  ${({ isActive, theme }) =>
+    isActive &&
+    css`
+      color: ${({ theme }) => theme.colors.complimentary};
+    `}
+
   &:hover {
-    ${chalkUnderlineStyle}
+    color: ${({ theme, isActive }) =>
+      isActive ? theme.colors.complimentary : theme.colors.lightComplimentary};
   }
 `;
 
@@ -65,18 +79,54 @@ const LinksContainer = styled.ul`
   flex-direction: column;
   list-style-type: none;
   padding-left: 0;
+`;
 
-  li:last-of-type ${Link} {
-    margin-bottom: 0;
+const Sublink = styled.a`
+  display: inline-block;
+  ${({ theme }) => theme.font}
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  font-weight: 400;
+  letter-spacing: ${({ theme }) => theme.letterSpacing};
+  line-height: ${({ theme }) => theme.lineHeight};
+  color: ${({ theme }) => theme.colors.light};
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 6px;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.lightComplimentary};
   }
+`;
 
-  @media (min-width: 1280px) {
-    position: sticky;
-    top: 128px;
+const SublinksContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 8px;
+  height: ${({ isActive }) => (isActive ? 'auto' : '0px')};
+  margin-bottom: ${({ isActive }) => (isActive ? '12px' : '0px')};
+  overflow-y: hidden;
+
+  li:last-of-type ${Sublink} {
+    margin-bottom: 0;
   }
 `;
 
 export default function Navigation() {
+  const [activeSection, setActiveSection] = useState(content.sections[0].id);
+
+  useEffect(() => {
+    const { hash } = window.location;
+
+    if (hash) {
+      setActiveSection(makeId(hash.replace('#', '').trim().split('---')[0]));
+
+      setTimeout(() => {
+        document.querySelector(hash).scrollIntoView();
+      }, 50);
+    }
+  }, []);
+
   return (
     <NavigationContainer>
       <TitleContainer>
@@ -91,7 +141,25 @@ export default function Navigation() {
       <LinksContainer>
         {content.sections.map((section) => (
           <li key={section.id}>
-            <Link href={`#${section.id}`}>{section.title}</Link>
+            <Link
+              href={`#${section.id}`}
+              onClick={() => setActiveSection(section.id)}
+              isActive={section.id === activeSection}
+            >
+              {section.title}
+            </Link>
+            {!!section.subSections && !!section.subSections.length && (
+              <SublinksContainer isActive={section.id === activeSection}>
+                {section.subSections.map((subSection) => (
+                  <Sublink
+                    key={subSection.id}
+                    href={`#${section.id}---${subSection.id}`}
+                  >
+                    {subSection.title}
+                  </Sublink>
+                ))}
+              </SublinksContainer>
+            )}
           </li>
         ))}
       </LinksContainer>

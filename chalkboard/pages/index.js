@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 import Navigation from '../src/Navigation';
-import Section from '../src/Section';
+import Documetation from '../src/Documentation';
 import content from '../src/content';
 
 const PageBackground = createGlobalStyle`
@@ -61,9 +61,7 @@ export default function Home(props) {
           <Navigation />
         </NavColumn>
         <MainColumn>
-          {content.sections.map((section) => (
-            <Section {...section} key={section.id} />
-          ))}
+          <Documetation />
         </MainColumn>
       </PageLayout>
     </React.Fragment>
