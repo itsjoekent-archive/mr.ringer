@@ -290,3 +290,40 @@ test('Throws error for invalid Vector2 division arguments', async (t) => {
   t.throws(() => Vector2.divide(new Vector2(), null));
   t.throws(() => Vector2.divide(new Vector2(), false));
 });
+
+test('Get the magnitude of a Vector2', async (t) => {
+  const magnitude = Vector2(3, 4).magnitude();
+  t.is(magnitude, 5);
+});
+
+test('Normalize a vector', async (t) => {
+  const vec = Vector2(3, 4).normalize();
+  t.is(vec.magnitude(), 1);
+});
+
+test('Does not throw error normalizing a vector with a magnitude of 0', async (t) => {
+  const vec = Vector2(0, 0).normalize();
+  t.is(vec.magnitude(), 0);
+});
+
+test('Get the dot product of a Vector2', async (t) => {
+  const dot = Vector2(2, 5).dot(Vector2(7, 1));
+  t.is(dot, 19);
+});
+
+test('Get the dot product of a Vector2 (static)', async (t) => {
+  const dot = Vector2.dot(Vector2(2, 5), Vector2(7, 1));
+  t.is(dot, 19);
+});
+
+test('Throws error for invalid Vector2 dot arguments', async (t) => {
+  t.throws(() => Vector2.dot('five', 2));
+  t.throws(() => Vector2.dot(false, 2));
+  t.throws(() => Vector2.dot({ foo: 'bar' }, 2));
+  t.throws(() => Vector2.dot(5, new Vector2()));
+  t.throws(() => Vector2.dot(undefined, new Vector2()));
+  t.throws(() => Vector2.dot(null, new Vector2()));
+  t.throws(() => Vector2.dot(new Vector2()));
+  t.throws(() => Vector2.dot(new Vector2(), null));
+  t.throws(() => Vector2.dot(new Vector2(), false));
+});

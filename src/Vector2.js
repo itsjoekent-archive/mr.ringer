@@ -246,6 +246,74 @@ function _divide(store, target, value) {
 }
 
 /**
+ * Get the magnitude of a given vector.
+ *
+ * @param  {Vector2} vector
+ * @return {Number}
+ */
+function _magnitude(vector) {
+  if (!_isValidVector2(vector)) {
+    throw new Error(
+      'Invalid "vector" argument for Vector2 magnitude operation.'
+    );
+  }
+
+  const { x, y } = vector;
+  const magnitude = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+
+  return magnitude;
+}
+
+/**
+ * Normalize a vector and write the result to a Vector2.
+ *
+ * @param  {[type]} store
+ * @param  {[type]} vector
+ * @return {[type]}
+ */
+function _normalize(store, vector) {
+  if (!_isValidVector2(store)) {
+    throw new Error(
+      'Invalid "store" argument for Vector2 normalize operation.'
+    );
+  }
+
+  if (!_isValidVector2(vector)) {
+    throw new Error(
+      'Invalid "vector" argument for Vector2 normalize operation.'
+    );
+  }
+
+  const magnitude = _magnitude(vector);
+
+  if (magnitude === 0) {
+    return vector;
+  }
+
+  return _divide(store, vector, magnitude);
+}
+
+/**
+ * Get the dot product of two vectors.
+ *
+ * @param  {Vector2} a
+ * @param  {Vector2} b
+ * @return {Number}
+ */
+function _dot(a, b) {
+  if (!_isValidVector2(a)) {
+    throw new Error('Invalid "a" argument for Vector2 dot product operation.');
+  }
+
+  if (!_isValidVector2(b)) {
+    throw new Error('Invalid "b" argument for Vector2 dot product operation.');
+  }
+
+  const dot = a.x * b.x + a.y * b.y;
+  return dot;
+}
+
+/**
  * Create a new Vector2. Defaults to x = 0, y = 0.
  *
  * Specify x & y.
@@ -300,6 +368,21 @@ function Vector2(...args) {
     divide: (value) => _divide(container, container, value),
 
     /**
+     * Get the dot product of this vector and another vector.
+     *
+     * @param  {Vector2} vector
+     * @return {Number}
+     */
+    dot: (vector) => _dot(container, vector),
+
+    /**
+     * Get the magnitude of this vector.
+     *
+     * @return {Number}
+     */
+    magnitude: () => _magnitude(container),
+
+    /**
      * Multiply this vector with another Vector2
      * to get the Hadamard product.
      *
@@ -307,6 +390,13 @@ function Vector2(...args) {
      * @return {Vector2}
      */
     multiply: (vector) => _multiply(container, container, vector),
+
+    /**
+     * Normalize this vector.
+     *
+     * @return {Vector2}
+     */
+    normalize: () => _normalize(container, container),
 
     /**
      * Scale this vector by the given value.
@@ -354,6 +444,15 @@ function Vector2(...args) {
  * @return {Vector2}
  */
 Vector2.add = (a, b) => _add(Vector2(), a, b);
+
+/**
+ * Get the dot product of two vectors.
+ *
+ * @param  {Vector2} a
+ * @param  {Vector2} b
+ * @return {Number}
+ */
+Vector2.dot = (a, b) => _dot(a, b);
 
 /**
  * Divide a vector by another vector or a numberr
@@ -413,5 +512,17 @@ Vector2.scale = (target, scalar) => _scale(Vector2(), target, scalar);
  * @return {Vector2}
  */
 Vector2.subtract = (target, value) => _subtract(Vector2(), target, value);
+
+Vector2.up = Vector2(0, 1);
+
+Vector2.down = Vector2(0, -1);
+
+Vector2.left = Vector2(1, 0);
+
+Vector2.right = Vector2(-1, 0);
+
+Vector2.one = Vector2(1, 1);
+
+Vector2.zero = Vector2(0, 0);
 
 export default Vector2;

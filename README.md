@@ -6,7 +6,6 @@ Mr. Ringer is a Javascript math library that makes it simple to perform complex 
 
 - **Clean, expressive syntax**
 - **Zero dependencies**
-- **Permits functional and object oriented coding styles**
 - **Documented for math and coding beginners in mind**
 
 ## Installation
