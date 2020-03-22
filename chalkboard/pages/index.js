@@ -16,9 +16,7 @@ const PageBackground = createGlobalStyle`
   }
 `;
 
-const layoutBreakpoint = css`
-  min-width: 1024px;
-`;
+const layoutBreakpoint = `min-width: 1024px`;
 
 const PageLayout = styled.div`
   display: flex;
