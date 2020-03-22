@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import marksy from 'marksy';
 import { createElement } from 'react';
 import makeId from './makeId';
-makeId;
 import content from './content';
 
 const Container = styled.div`
