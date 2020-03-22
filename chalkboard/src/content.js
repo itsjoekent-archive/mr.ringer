@@ -28,8 +28,7 @@ const content = {
       composition: [
         {
           type: 'markdown',
-          content:
-            'You can install mr.ringer from either npm or use it as a standalone script on the page.',
+          content: `You can install mr.ringer from either npm or use it as a standalone script on the page.`,
         },
         {
           type: 'terminal',
