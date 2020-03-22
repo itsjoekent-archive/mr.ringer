@@ -9,8 +9,8 @@
 /**
  * Check if the given input has a valid x/y component.
  *
- * @param       {Mixed}  check
- * @return      {Boolean}
+ * @param  {Mixed}  check
+ * @return {Boolean}
  */
 function _isValidPoint(check) {
   if (typeof check === 'undefined' || typeof check === null) {
@@ -27,8 +27,8 @@ function _isValidPoint(check) {
 /**
  * Check if the given input is a valid x/y component or a number.
  *
- * @param       {Mixed}  check
- * @return      {Boolean}
+ * @param  {Mixed}  check
+ * @return {Boolean}
  */
 function _isPointOrNumber(check) {
   return _isValidPoint(check) || typeof check === 'number';
@@ -37,8 +37,8 @@ function _isPointOrNumber(check) {
 /**
  * Check if the given input is a valid Vector2.
  *
- * @param       {Mixed}  check
- * @return      {Boolean}
+ * @param  {Mixed}  check
+ * @return {Boolean}
  */
 function _isValidVector2(check) {
   return typeof check === 'object' && check['ringerType'] === 'Vector2';
@@ -47,9 +47,10 @@ function _isValidVector2(check) {
 /**
  * Add value A to value B, write the output to a Vector2.
  *
- * @param {Vector2} store Vector2 to store the result.
- * @param {Vector2 || Number} a
- * @param {Vector2 || Number} b
+ * @param  {Vector2} store Vector2 to store the result.
+ * @param  {Vector2 || Number} a
+ * @param  {Vector2 || Number} b
+ * @return {Vector2}
  */
 function _add(store, a, b) {
   if (!_isValidVector2(store)) {
@@ -91,9 +92,10 @@ function _add(store, a, b) {
 /**
  * Subtract a value from a vector, write the output to a Vector2.
  *
- * @param {Vector2} store Vector2 to store the result.
- * @param {Vector2} target
- * @param {Vector2 || Number} b
+ * @param  {Vector2} store Vector2 to store the result.
+ * @param  {Vector2} target
+ * @param  {Vector2 || Number} b
+ * @return {Vector2}
  */
 function _subtract(store, target, value) {
   if (!_isValidVector2(store)) {
@@ -131,10 +133,10 @@ function _subtract(store, target, value) {
 /**
  * Scale a vector by the given value, write the output to a Vector2.
  *
- * @param       {Vector2} store
- * @param       {Vector2} target
- * @param       {Number} scalar
- * @return      {Vector2}
+ * @param  {Vector2} store
+ * @param  {Vector2} target
+ * @param  {Number} scalar
+ * @return {Vector2}
  */
 function _scale(store, target, scalar) {
   if (!_isValidVector2(store)) {
@@ -163,10 +165,10 @@ function _scale(store, target, scalar) {
  * Multiply two vectors to get the Hadamard product,
  * write the output to a Vector2.
  *
- * @param       {Vector2} store
- * @param       {Vector2} a
- * @param       {Vector2} b
- * @return      {Vector2}
+ * @param  {Vector2} store
+ * @param  {Vector2} a
+ * @param  {Vector2} b
+ * @return {Vector2}
  */
 function _multiply(store, a, b) {
   if (!_isValidVector2(store)) {
@@ -207,10 +209,10 @@ function _multiply(store, a, b) {
  * Divide a Vector2 by another Vector2 or Number,
  * write the output to a Vector2.
  *
- * @param       {Vector2} store
- * @param       {Vector2} targe
- * @param       {Vector2 || Number} value
- * @return      {Vector2}
+ * @param  {Vector2} store
+ * @param  {Vector2} targe
+ * @param  {Vector2 || Number} value
+ * @return {Vector2}
  */
 function _divide(store, target, value) {
   if (!_isValidVector2(store)) {
@@ -247,13 +249,13 @@ function _divide(store, target, value) {
  * Create a new Vector2. Defaults to x = 0, y = 0.
  *
  * Specify x & y.
- * @param       {Number} x
- * @param       {Number} y
+ * @param  {Number} x
+ * @param  {Number} y
  *
  * Specify Vector2.
- * @param       {Vector2} vector
+ * @param  {Vector2} vector
  *
- * @return      {Vector2}
+ * @return {Vector2}
  */
 function Vector2(...args) {
   let initialX = 0;
@@ -347,8 +349,8 @@ function Vector2(...args) {
 /**
  * Add two values together and return a new Vector2.
  *
- * @param {Vector2 || Number} a
- * @param {Vector2 || Number} b
+ * @param  {Vector2 || Number} a
+ * @param  {Vector2 || Number} b
  * @return {Vector2}
  */
 Vector2.add = (a, b) => _add(Vector2(), a, b);
