@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes, withTheme } from 'styled-components';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import { useEffect, useRef, useState } from 'react';
 import { Vector2 as MathVector2 } from 'mr.ringer';
@@ -13,10 +13,9 @@ if (typeof window !== 'undefined' && typeof window.navigator !== 'undefined') {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  max-height: 90vh;
   margin-top: 48px;
   margin-bottom: 48px;
   padding-top: 16px;
@@ -25,8 +24,10 @@ const Container = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.colors.complimentary};
   position: relative;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1080px) {
     height: 90vh;
+    max-height: 600px;
+    flex-direction: row;
   }
 
   &:before {
@@ -38,6 +39,7 @@ const Container = styled.div`
     letter-spacing: ${({ theme }) => theme.chalkLetterSpacing};
     line-height: ${({ theme }) => theme.chalkLineHeight};
     text-transform: uppercase;
+    white-space: nowrap;
     color: ${({ theme }) => theme.colors.complimentary};
     background-color: ${({ theme }) => theme.colors.dark};
     border: 2px solid ${({ theme }) => theme.colors.complimentary};
@@ -55,11 +57,11 @@ const LessonsColumn = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px;
-  width: 50%;
+  width: 100%;
   max-height: 200px;
   overflow-y: scroll;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1080px) {
     width: 20%;
     max-height: none;
   }
@@ -138,11 +140,11 @@ const LessonTitle = styled.button`
 `;
 
 const ChartColumn = styled.div`
-  width: 50%;
+  width: 100%;
   padding: 16px;
   position: relative;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1080px) {
     width: 40%;
   }
 `;
@@ -192,13 +194,17 @@ const CodeColumn = styled.div`
   }
 `;
 
-export default function Sandbox() {
+function Sandbox(props) {
+  const { theme } = props;
+
   const [activeLesson, setActiveLesson] = useState(lessons[0]);
   const [script, setScript] = useState(lessons[0].script);
   const [scriptError, setScriptError] = useState(null);
 
-  const lessonsColumnRef = useRef(null);
+  const canvasColumnRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const [dimensions, setDimensions] = useState([0, 0]);
 
   useEffect(() => {
     setScript(activeLesson.script);
@@ -212,19 +218,190 @@ export default function Sandbox() {
 
       const Vector2 = MathVector2;
 
-      function grid(dimension, minX, minY, maxX, maxY) {
-        console.log('grid', dimension, minX, minY, maxX, maxY);
+      let gridDimension = '2d';
+      let gridLength = 100;
+
+      function gridPixelsPerUnit() {
+        return {
+          wideUnit: canvasWidth / 2 / gridLength,
+          tallUnit: canvasHeight / 2 / gridLength,
+        };
       }
 
-      function lineColor(color) {
-        console.log('lineColor', color);
+      function getPoint(x, y) {
+        if (gridDimension === '2d') {
+          const { tallUnit, wideUnit } = gridPixelsPerUnit();
+
+          const canvasX = x * wideUnit + canvasWidth / 2;
+          const canvasY = canvasHeight - y * tallUnit - canvasHeight / 2;
+
+          return { x: canvasX, y: canvasY };
+        }
+      }
+
+      function lineStyle(
+        color = theme.colors.light,
+        width = 1,
+        cap = 'round',
+        join = 'round'
+      ) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.lineCap = cap;
+        ctx.lineJoin = join;
+      }
+
+      function grid(dimension, length) {
+        gridDimension = dimension;
+        gridLength = length;
+
+        if (dimension === '2d') {
+          const frequency = Math.round(gridLength / 10);
+
+          ctx.beginPath();
+          lineStyle('#2f2f2f', 1, 'square');
+
+          for (let xRow = -gridLength; xRow < gridLength; xRow += frequency) {
+            for (let yRow = -gridLength; yRow < gridLength; yRow += frequency) {
+              if (
+                xRow === -gridLength ||
+                yRow === -gridLength ||
+                xRow === gridLength ||
+                yRow === gridLength
+              ) {
+                continue;
+              }
+
+              const xGridLine = [
+                getPoint(yRow, -gridLength),
+                getPoint(yRow, gridLength),
+              ];
+
+              const yGridLine = [
+                getPoint(-gridLength, xRow),
+                getPoint(gridLength, xRow),
+              ];
+
+              ctx.moveTo(xGridLine[0].x, xGridLine[0].y);
+              ctx.lineTo(xGridLine[1].x, xGridLine[1].y);
+
+              ctx.moveTo(yGridLine[0].x, yGridLine[0].y);
+              ctx.lineTo(yGridLine[1].x, yGridLine[1].y);
+
+              ctx.stroke();
+            }
+          }
+
+          ctx.closePath();
+
+          const labelFrequency = Math.round(gridLength / 5);
+
+          for (
+            let xRow = -gridLength;
+            xRow < gridLength;
+            xRow += labelFrequency
+          ) {
+            for (
+              let yRow = -gridLength;
+              yRow < gridLength;
+              yRow += labelFrequency
+            ) {
+              if (
+                xRow === -gridLength ||
+                yRow === -gridLength ||
+                xRow === gridLength ||
+                yRow === gridLength ||
+                xRow === 0 ||
+                yRow === 0
+              ) {
+                continue;
+              }
+
+              const xLabel = getPoint(xRow, 0);
+              const yLabel = getPoint(0, yRow);
+
+              ctx.font = '12px monospace';
+              ctx.fillStyle = theme.colors.light;
+
+              const xRowTextMetrics = ctx.measureText(xRow);
+
+              ctx.fillText(
+                xRow,
+                xLabel.x - xRowTextMetrics.width / 2,
+                xLabel.y + xRowTextMetrics.actualBoundingBoxAscent + 4
+              );
+              ctx.fillText(
+                yRow,
+                yLabel.x + 4,
+                yLabel.y + xRowTextMetrics.actualBoundingBoxAscent / 2
+              );
+            }
+          }
+
+          lineStyle(theme.colors.light, 2, 'square');
+
+          const origin = getPoint(0, 0);
+          const top = getPoint(0, gridLength);
+          const bottom = getPoint(0, -gridLength);
+          const left = getPoint(-gridLength, 0);
+          const right = getPoint(gridLength, 0);
+
+          ctx.beginPath();
+          ctx.moveTo(top.x, top.y);
+          ctx.lineTo(bottom.x, bottom.y);
+          ctx.moveTo(left.x, left.y);
+          ctx.lineTo(right.x, right.y);
+          ctx.stroke();
+          ctx.closePath();
+        }
       }
 
       function arrow(fromX, fromY, toX, toY) {
-        console.log('arrow', fromX, fromY, toX, toY);
+        const from = getPoint(fromX, fromY);
+        const to = getPoint(toX, toY);
+
+        const { wideUnit } = gridPixelsPerUnit();
+        const headLength = wideUnit * (gridLength * 0.0025);
+
+        ctx.beginPath();
+        ctx.moveTo(from.x, from.y);
+        ctx.lineTo(to.x, to.y);
+
+        const distance = [toX - fromX, toY - fromY];
+        const angle = Math.atan2(...distance);
+
+        const headPoints = [
+          getPoint(
+            toX - headLength * Math.cos(angle - Math.PI / 6),
+            toY - headLength * Math.sin(angle - Math.PI / 6)
+          ),
+          getPoint(
+            toX - headLength * Math.cos(angle + Math.PI / 6),
+            toY - headLength * Math.sin(angle + Math.PI / 6)
+          ),
+        ];
+
+        ctx.lineTo(headPoints[0].x, headPoints[0].y);
+        ctx.moveTo(to.x, to.y);
+        ctx.lineTo(headPoints[1].x, headPoints[1].y);
+
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      function line(fromX, fromY, toX, toY) {
+        const from = getPoint(fromX, fromY);
+        const to = getPoint(toX, toY);
+
+        ctx.beginPath();
+        ctx.moveTo(from.x, from.y);
+        ctx.lineTo(to.x, to.y);
+        ctx.stroke();
+        ctx.closePath();
       }
 
       try {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         eval(script);
         setScriptError(null);
       } catch (error) {
@@ -236,9 +413,28 @@ export default function Sandbox() {
     if (!canvasRef.current || !script) {
       return;
     }
-
     runScript();
-  }, [canvasRef.current, script]);
+  }, [canvasRef.current, script, ...dimensions]);
+
+  useEffect(() => {
+    if (!canvasRef.current || !canvasColumnRef.current) {
+      return;
+    }
+
+    function resizeCanvas() {
+      canvasRef.current.width =
+        canvasColumnRef.current.getBoundingClientRect().width - 16;
+      canvasRef.current.height =
+        canvasColumnRef.current.getBoundingClientRect().height - 32;
+      setDimensions([canvasRef.current.width, canvasRef.current.height]);
+    }
+
+    resizeCanvas();
+
+    window.addEventListener('resize', resizeCanvas);
+
+    return () => window.removeEventListener('resize', resizeCanvas);
+  }, [canvasRef.current, canvasColumnRef.current]);
 
   const codeMirrorOptions = {
     theme: 'nord',
@@ -252,7 +448,7 @@ export default function Sandbox() {
 
   return (
     <Container>
-      <LessonsColumn ref={lessonsColumnRef}>
+      <LessonsColumn>
         <LessonsColumnHeader>Lessons</LessonsColumnHeader>
         <LessonsColumnSubheader>
           Click a lesson to learn more about the topic.
@@ -268,7 +464,7 @@ export default function Sandbox() {
           </span>
         ))}
       </LessonsColumn>
-      <ChartColumn>
+      <ChartColumn ref={canvasColumnRef}>
         <ChartCanvas ref={canvasRef} />
         {scriptError && <ErrorMessage>{scriptError}</ErrorMessage>}
       </ChartColumn>
@@ -283,3 +479,5 @@ export default function Sandbox() {
     </Container>
   );
 }
+
+export default withTheme(Sandbox);
