@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import marksy from 'marksy';
 import { createElement } from 'react';
 import makeId from './makeId';
-import content from './content';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 64px;
+  width: 100%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -20,44 +20,6 @@ const Container = styled.div`
   letter-spacing: ${({ theme }) => theme.letterSpacing};
   line-height: ${({ theme }) => theme.lineHeight};
   color: ${({ theme }) => theme.colors.light};
-`;
-
-const NavigationContainer = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-`;
-
-const NavigationTitle = styled.h1`
-  ${({ theme }) => theme.chalkFont}
-  font-size: ${({ theme }) => theme.fontSizes.body};
-  font-weight: 700;
-  letter-spacing: ${({ theme }) => theme.chalkLetterSpacing};
-  line-height: ${({ theme }) => theme.chalkLineHeight};
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.complimentary};
-  margin-right: 6px;
-`;
-
-const NavigationSubtitle = styled.p`
-  ${({ theme }) => theme.font}
-  font-size: ${({ theme }) => theme.fontSizes.tiny};
-  font-weight: 400;
-  letter-spacing: ${({ theme }) => theme.letterSpacing};
-  line-height: ${({ theme }) => theme.lineHeight};
-  color: ${({ theme }) => theme.colors.light};
-`;
-
-const NavigationSubtitleLink = styled(NavigationSubtitle)`
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.complimentary};
-  }
 `;
 
 const Title = styled.h2`
@@ -140,11 +102,6 @@ const compileMarkdown = () => {
 
         return <Title id={id}>{children}</Title>;
       },
-      h2: ({ children }) => {
-        const id = makeId(children.toString());
-
-        return <Title id={`${lastH1}---${id}`}>{children}</Title>;
-      },
       p: Paragraph,
       a: Anchor,
       h3: Header3,
@@ -154,19 +111,8 @@ const compileMarkdown = () => {
   });
 };
 
-export default function Documentation() {
-  return (
-    <Container>
-      <NavigationContainer>
-        <NavigationTitle>mr. ringer</NavigationTitle>
-        <NavigationSubtitle>
-          JS Math library created by{' '}
-          <NavigationSubtitleLink as="a" href="https://joekent.nyc/">
-            @itsjoekent
-          </NavigationSubtitleLink>
-        </NavigationSubtitle>
-      </NavigationContainer>
-      {compileMarkdown()(content.markup).tree}
-    </Container>
-  );
+export default function Documentation(props) {
+  const { markup } = props;
+
+  return <Container>{compileMarkdown()(markup).tree}</Container>;
 }

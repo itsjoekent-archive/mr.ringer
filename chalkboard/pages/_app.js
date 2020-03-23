@@ -3,6 +3,9 @@ import App from 'next/app';
 import Head from 'next/head';
 import { css, ThemeProvider } from 'styled-components';
 
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/nord.css';
+
 const chalkFont = css`
   font-family: 'Caveat', cursive;
 `;
