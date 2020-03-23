@@ -42,7 +42,7 @@ See the [documentation website](https://itsjoekent.github.io/mr.ringer/) for usa
 
 5. Throw useful errors. All error messages intentionally thrown have clear validation messaging.
 
-6. Document and test every function. Developers should not be left guessing what a function does or what parameters it accepts. All functions have automated testing behind them to ensure stability.
+6. Document and test every function. Developers should not be left guessing what a function does or what parameters it accepts. And all functions have automated testing behind them to ensure stability.
 
 ## Contributing
 
