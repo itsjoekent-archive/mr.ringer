@@ -1,6 +1,6 @@
 {
   "name": "mr.ringer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Mr. Ringer is a Javascript math library that makes it simple to perform complex math for 3D games",
   "main": "dist/mr.ringer.js",
   "scripts": {
