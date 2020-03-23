@@ -5,23 +5,38 @@ const markup = `
 
   Mr. Ringer is a Javascript math library that makes it simple to perform complex math for 3D games.
 
-  This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam for his class (I ended up getting a 46% on that test).
+  This package is named after my high school trigonometry teacher, Mr Ringer, who told myself and the rest of the class to go to the beach instead of taking the final exam (I ended up getting a 46% on that test).
 
   # Installation
 
-  You can install mr.ringer from either npm or use it as a standalone script on the page.
+  Install with npm,
 
   \`\`\`
   $ npm install mr.ringer
 
-  <script src="https://unpkg.com/mr.ringer/dist/mr.ringer.js"></script>
+  import { Vector2 } from 'mr.ringer';
   \`\`\`
 
-  # Vector2
+  Or reference standalone,
 
-  ## add()
+  \`\`\`
+  <script src="https://unpkg.com/mr.ringer/dist/mr.ringer.js"></script>
 
-  # Vector3
+  const { Vector2 } = window['mr.ringer'];
+  \`\`\`
+
+  # Glossary
+
+  ### Vector
+
+  In mathematics, a vector represents a direction and length. For example, a car drives north at 50mph.
+
+  The amount of components in the vector depends on its dimensions. For example, a two dimensionsional vector has an X and Y component.
+
+  In game development vectors are used for a variety of purposes such as,
+
+  - Keeping track of velocity
+  - Storing a 2D or 3D coordinate
 `;
 
 const lines = markup

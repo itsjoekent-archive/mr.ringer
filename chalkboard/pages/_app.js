@@ -22,12 +22,15 @@ const dark = '#1b1b1b';
 const complimentary = '#f10079';
 const lightComplimentary = '#ffb6db';
 
+const accent = '#7b007b';
+
 const theme = {
   colors: {
     dark,
     light,
     complimentary,
     lightComplimentary,
+    accent,
   },
   font: terminalFont,
   lineHeight: terminalLineHeight,
