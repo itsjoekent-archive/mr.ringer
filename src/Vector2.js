@@ -4,6 +4,17 @@
  * @type {Number} x
  * @type {Number} y
  * @type {Function} add
+ * @type {Function} add
+ * @type {Function} clone
+ * @type {Function} divide
+ * @type {Function} dot
+ * @type {Function} magnitude
+ * @type {Function} multiply
+ * @type {Function} normalize
+ * @type {Function} scale
+ * @type {Function} subtract
+ * @type {Function} toArray
+ * @type {Function} toJSON
  */
 
 /**
@@ -267,9 +278,9 @@ function _magnitude(vector) {
 /**
  * Normalize a vector and write the result to a Vector2.
  *
- * @param  {[type]} store
- * @param  {[type]} vector
- * @return {[type]}
+ * @param  {Vector2} store
+ * @param  {Vector2} vector
+ * @return {Vector2}
  */
 function _normalize(store, vector) {
   if (!_isValidVector2(store)) {
