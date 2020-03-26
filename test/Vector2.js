@@ -32,9 +32,9 @@ test('Clones Vector2', async (t) => {
 });
 
 test('Converts Vector2 to array', async (t) => {
-  const vec = new Vector2(2, 2);
+  const vec = new Vector2(1, 2);
 
-  t.deepEqual(vec.toArray(), [2, 2]);
+  t.deepEqual(vec.toArray(), [1, 2]);
 });
 
 test('Converts array to Vector2', async (t) => {
@@ -43,14 +43,14 @@ test('Converts array to Vector2', async (t) => {
 });
 
 test('Converts Vector2 to JSON', async (t) => {
-  const vec = new Vector2(2, 2);
+  const vec = new Vector2(1, 2);
 
-  t.deepEqual(vec.toJSON(), '{"x":2,"y":2}');
+  t.deepEqual(vec.toJSON(), '{"x":1,"y":2}');
 });
 
 test('Converts json to Vector2', async (t) => {
-  t.is(Vector2.fromJSON('{"x":2,"y":2}').x, 2);
-  t.is(Vector2.fromJSON({ x: 2, y: 2 }).y, 2);
+  t.is(Vector2.fromJSON('{"x":1,"y":2}').x, 1);
+  t.is(Vector2.fromJSON({ x: 1, y: 2 }).y, 2);
 });
 
 test('Adds Vector2 to Vector2', async (t) => {
@@ -294,6 +294,11 @@ test('Throws error for invalid Vector2 division arguments', async (t) => {
 test('Get the magnitude of a Vector2', async (t) => {
   const magnitude = Vector2(3, 4).magnitude();
   t.is(magnitude, 5);
+});
+
+test('Check the magnitude of a Vector2 is not negative', async (t) => {
+  const magnitude = Vector2(-100, 0).magnitude();
+  t.is(magnitude, 100);
 });
 
 test('Normalize a vector', async (t) => {
