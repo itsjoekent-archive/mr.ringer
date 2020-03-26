@@ -33,7 +33,9 @@ const postMarkup = `
 
   In mathematics, a vector represents a direction and length. For example, a car drives north at 50mph.
 
-  The amount of components in the vector depends on its dimensions. For example, a two dimensionsional vector has an X and Y component.
+  You should think of a vector like a compass and a spedometer forged together into a single contraption.
+
+  The amount of components in a vector depends on its dimensions. For example, a two dimensionsional vector has an X and Y component.
 
   In game development vectors are used for a variety of purposes such as,
 

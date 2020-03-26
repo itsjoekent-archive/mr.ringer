@@ -9,7 +9,7 @@
     "build:watch": "webpack --watch",
     "test": "ava",
     "test:watch": "ava --watch",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build && npm test"
   },
   "ava": {
     "babel": true,

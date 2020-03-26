@@ -301,7 +301,7 @@ function _normalize(store, vector) {
     return vector;
   }
 
-  return _divide(store, vector, magnitude);
+  return _scale(store, vector, 1 / magnitude);
 }
 
 /**

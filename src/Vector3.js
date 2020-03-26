@@ -81,7 +81,7 @@ function _add(store, a, b) {
 
   let newX = 0;
   let newY = 0;
-  let newX = 0;
+  let newZ = 0;
 
   function execute(arg) {
     if (typeof arg === 'number') {
@@ -252,7 +252,7 @@ function _divide(store, target, value) {
     throw new Error('Invalid "value" argument for Vector3 divide operation.');
   }
 
-  let { x: newX, y: newY, newZ: z } = target.clone();
+  let { x: newX, y: newY, z: newZ } = target.clone();
 
   if (typeof value === 'number') {
     newX /= value;
@@ -318,7 +318,7 @@ function _normalize(store, vector) {
     return vector;
   }
 
-  return _divide(store, vector, magnitude);
+  return _scale(store, vector, 1 / magnitude);
 }
 
 /**

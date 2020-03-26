@@ -9,7 +9,7 @@ $ npm install
 $ npm start
 ```
 
-This will rebuild the library on file-save and rerun unit tests. It is suggested to also install an editor extension for [Prettier](https://prettier.io/) ([Atom](https://atom.io/packages/prettier-atom), [VS Code](https://github.com/prettier/prettier-vscode)).
+This will rebuild the library on file-save and rerun unit tests. It is suggested to also install an editor extension for [Prettier](https://prettier.io/) ([Atom](https://atom.io/packages/prettier-atom), [VS Code](https://github.com/prettier/prettier-vscode)). Code changes will automatically run through Prettier regardless on Git commit.
 
 ### Code style
 
