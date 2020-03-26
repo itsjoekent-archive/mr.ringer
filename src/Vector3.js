@@ -39,7 +39,7 @@ function _isValid3DPoint(check) {
 }
 
 /**
- * Check if the given input is a valid x/y component or a number.
+ * Check if the given input is a valid x/y/z component or a number.
  *
  * @param  {Mixed}  check
  * @return {Boolean}
@@ -363,10 +363,14 @@ function Vector3(...args) {
       initialX = args[0]['x'];
       initialY = args[0]['y'];
       initialZ = args[0]['z'];
-    } else if (typeof args[0] === 'number' && typeof args[1] === 'number') {
+    } else if (
+      typeof args[0] === 'number' &&
+      typeof args[1] === 'number' &&
+      typeof args[2] === 'number'
+    ) {
       initialX = args[0];
       initialY = args[1];
-      initialZ = args[3];
+      initialZ = args[2];
     }
   }
 
