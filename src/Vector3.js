@@ -3,6 +3,7 @@
  * @type {String} ringerType
  * @type {Number} x
  * @type {Number} y
+ * @type {Number} z
  * @type {Function} add
  * @type {Function} clone
  * @type {Function} divide
