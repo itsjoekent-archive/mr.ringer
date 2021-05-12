@@ -6,7 +6,7 @@
     "export": "NODE_ENV=production next build && next export -o ../docs"
   },
   "dependencies": {
-    "codemirror": "^5.52.2",
+    "codemirror": "^5.58.2",
     "marksy": "^8.0.0",
     "mr.ringer": "^0.1.0",
     "next": "9.3.1",
